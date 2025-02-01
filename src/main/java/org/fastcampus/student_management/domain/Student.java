@@ -17,7 +17,21 @@ public class Student {
     this.address = address;
     this.activated = true;
   }
+  public void activate() {
+    if (this.activated) {
+      throw  new IllegalArgumentException();
+    }
 
+    this.activated = true;
+  }
+
+  public void deactivate() {
+    if (!this.activated) {
+      throw new IllegalArgumentException();
+    }
+
+    this.activated = false;
+  }
   public String getName() {
     return name;
   }
